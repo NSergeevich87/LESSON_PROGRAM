@@ -5,8 +5,6 @@
 System.Console.Write("Vvedite chislo: ");
 int number = int.Parse(Console.ReadLine());
 
-int count = 0;
-
 if (number < 0)
 {
     number = number * (-1);
