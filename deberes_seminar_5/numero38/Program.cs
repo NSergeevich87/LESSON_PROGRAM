@@ -59,18 +59,9 @@ int MaxMenosMin (int[] array)
       }
     }
    }
-
-   if (min < 0)
-   {
-    result = max + min;
-   }
-   else
-   {
-    result = max - min;
-   }
    
+   result = max - min;
    return result;
-
 }
 
 int size = NewMessage("Введите размер массива: ");
