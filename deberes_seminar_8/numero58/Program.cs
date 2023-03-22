@@ -51,32 +51,20 @@ void PrintMatrix(int[,] array)
 
 int[,] MultiplicationMatrix(int[,] firstArray, int[,] secondArray)
 {
-    int sizeI = 0;
-    int sizeJ = 0;
-    int[,] newArray = new int[sizeI, sizeJ];
+    int[,] newArray = new int[firstArray.GetLength(0), secondArray.GetLength(1)];
 
     if ((firstArray.GetLength(0) * firstArray.GetLength(1)) == (secondArray.GetLength(0) * secondArray.GetLength(1)))
     {
-        if (firstArray.GetLength(0) < secondArray.GetLength(0))
+        for (int i = 0; i < firstArray.GetLength(0); i++)
         {
-            sizeI = firstArray.GetLength(0);
+            for (int j = 0; j < secondArray.GetLength(1); j++)
+            {
+                for (int k = 0; k < secondArray.GetLength(0); k++)
+                {
+                    newArray[i, j] += firstArray[i, k] * secondArray[k, j];
+                }
+            }
         }
-        else
-        {
-            sizeI = secondArray.GetLength(0);
-        }
-        if (firstArray.GetLength(1) < secondArray.GetLength(1))
-        {
-            sizeJ = firstArray.GetLength(1);
-        }
-        else
-        {
-            sizeJ = secondArray.GetLength(1);
-        }
-
-        
-
-
     }
     else
     {
@@ -101,6 +89,6 @@ PrintMatrix(firstMatrix);
 System.Console.WriteLine();
 int[,] secondMatrix = GenerMatrix(rowsSM, columnsSM, minNumberSM, maxNumberSM);
 PrintMatrix(secondMatrix);
-
+System.Console.WriteLine();
 int[,] newMultMatrix = MultiplicationMatrix(firstMatrix, secondMatrix);
 PrintMatrix(newMultMatrix);
