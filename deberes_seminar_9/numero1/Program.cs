@@ -2,6 +2,8 @@
 M, N = 5, 8 -> "6, 8"
 M, N = 2, 4 -> "2, 4" */
 
+System.Console.Clear();
+
 int NuevoMensaje(string mensaje)
 {
     System.Console.Write(mensaje);
