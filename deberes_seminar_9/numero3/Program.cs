@@ -2,26 +2,30 @@
 m = 2, n = 3 -> A(m,n) = 9
 m = 3, n = 2 -> A(m,n) = 29 */
 
-    /* m = 0 -> n + 1; 
+/* m = 0 -> n + 1; 
 m > 0, n = 0 -> A(m - 1, 1); 
 m > 0, n > 0 -> A(m - 1, A(m, n - 1)); */
 
-int m = 2;
-int n = 3;
-
-int Akkerman(int m, int n, int res = 0)
+int NuevoMensaje(string mensaje)
 {
-    if (m == 0)
-    {
-        res = res + n + 1;
-        return res;
-    }
+    System.Console.Write(mensaje);
+    string answer = System.Console.ReadLine();
+    int number = int.Parse(answer);
+    return number;
+}
 
-    if (m > 0 && n == 0)
+int Akkerman(int x, int y)
+{
+    if (x == 0) return y + 1;
+    else
     {
-        Akkerman(m - 1,)
+        if (x > 0 && y == 0) return Akkerman(x - 1, 1);
+        else return Akkerman(x - 1, Akkerman(x, y - 1));
     }
 }
 
+int m = NuevoMensaje("Введите первое целое неотрицательное число: ");
+int n = NuevoMensaje("Введите второе целое неотрицательное число: ");
+
 int result = Akkerman(m, n);
-System.Console.WriteLine(result);
+NuevoMensaje($"Значение функции Аккермана: {result}");
