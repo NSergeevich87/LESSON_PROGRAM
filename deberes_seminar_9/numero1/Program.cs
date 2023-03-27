@@ -17,17 +17,23 @@ void IntervaloNumerosPares(int de, int a)
     int desde = de;
     int hasta = a;
 
-    if (desde > hasta)
+    if (desde >= hasta)
     {
         return;
+    }
+
+    if (desde % 2 != 0)
+    {
+        desde += 1;
     }
 
     if (desde % 2 == 0)
     {
         System.Console.Write($"{desde} ");
+        IntervaloNumerosPares(de + 2, a);
     }
 
-    IntervaloNumerosPares(de + 1, a);
+    
 }
 
 int hastaNumero = NuevoMensaje("Введите число N: ");

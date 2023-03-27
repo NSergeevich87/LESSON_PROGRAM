@@ -4,17 +4,17 @@ M = 4; N = 8. -> 30 */
 
 System.Console.Clear();
 
-int NuevoMensaje(string mensaje)
+ulong NuevoMensaje(string mensaje)
 {
     System.Console.Write(mensaje);
     string respuesta = System.Console.ReadLine();
-    int numero = int.Parse(respuesta);
+    ulong numero = ulong.Parse(respuesta);
     return numero;
 }
 
-void IntervaloNumerosPares(int de, int a, int sum = 0)
+void IntervaloNumerosPares(ulong de, ulong a, ulong sum = 0)
 {
-    int temp = 0;
+    ulong temp = 0;
 
     if (de > a)
     {
@@ -36,7 +36,7 @@ void IntervaloNumerosPares(int de, int a, int sum = 0)
     }
 }
 
-int desdeNumero = NuevoMensaje("Введите диапазон ОТ: ");
-int hastaNumero = NuevoMensaje("Введите диапазон ДО: ");
+ulong desdeNumero = NuevoMensaje("Введите диапазон ОТ: ");
+ulong hastaNumero = NuevoMensaje("Введите диапазон ДО: ");
 
 IntervaloNumerosPares(desdeNumero, hastaNumero);
