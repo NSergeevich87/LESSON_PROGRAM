@@ -35,8 +35,8 @@ void SecondMaxInArray(int[] array)
 {
     System.Console.WriteLine();
 
-    int fMax = 0;
-    int sMax = 0;
+    int fMax = array[0];
+    int sMax = array[0];
     
     // Необходимо 2 раза пройти по массиву
     for (int i = 0; i < 2; i++)     
